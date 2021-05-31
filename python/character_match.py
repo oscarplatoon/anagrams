@@ -33,5 +33,3 @@ def is_character_match(string1, string2):
     
     result = True
     return result
-
-print(is_character_match('Anna Madrigal', 'A man and a girl       '))
