@@ -18,12 +18,20 @@ def is_character_match(string1, string2):
     string_dict = {}
 
     for i in range(len(first_string)):
-        print(first_string[i])
+
         if first_string[i] in string_dict:
             string_dict[first_string[i]] += 1
         else:
             string_dict[first_string[i]] = 1
 
-    print(string_dict)
+    for i in range (len(string_dict)):
+        #Use the .get() to handle if character:count pair is not in string_dict.
+        if(string_dict.get(second_string[i])):
+            string_dict[second_string[i]] -= 1
+        else:
+            return result
+    
+    result = True
+    return result
 
-print(is_character_match("test a thing", "tast A THING"))
+print(is_character_match('Anna Madrigal', 'A man and a girl       '))
