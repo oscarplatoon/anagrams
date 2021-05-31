@@ -1,5 +1,29 @@
-# Don't forget to run your tests!
 
 def is_character_match(string1, string2):
-	pass
-	# Your code here
+
+    result = False
+
+    # Convert to lower, split at into list at the space character
+    first_string_list = string1.lower().split(" ")
+    second_string_list = string2.lower().split(" ")
+
+    # Rejoin the strings without spaces.
+    first_string = "".join(first_string_list)
+    second_string = "".join(second_string_list)
+
+    # If string lengths are different, they can't be anagrams, return false
+    if len(first_string) != len(second_string):
+        return result
+
+    string_dict = {}
+
+    for i in range(len(first_string)):
+        print(first_string[i])
+        if first_string[i] in string_dict:
+            string_dict[first_string[i]] += 1
+        else:
+            string_dict[first_string[i]] = 1
+
+    print(string_dict)
+
+print(is_character_match("test a thing", "tast A THING"))
